@@ -46,11 +46,7 @@ export default function Filmes(){
 
         <div>
 
-            <div>
-
-                {data.Search[0].Title} --- {data.Search[0].Year}
-
-            </div>
+            { data.Search.map( (m) => <div>{m.Title} --- {m.Year}</div>) }
 
         </div>
 
