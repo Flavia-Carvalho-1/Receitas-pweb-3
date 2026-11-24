@@ -230,3 +230,8 @@ code {
 .form-busca button:hover {
    background: #5c380d;
 }
+
+.form-busca button:disabled {
+   background: #8a7a64;
+   cursor: wait;
+}
