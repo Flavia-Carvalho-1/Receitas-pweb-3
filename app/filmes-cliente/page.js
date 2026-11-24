@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useFormStatus } from "react-dom"
 
 export default function Home(){
 
@@ -44,7 +45,7 @@ export function FormularioFilmes({handleAction, titulo, setTitulo}){
 
             <input id="idTitulo" name="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)}/>
 
-            <button type="submit">Pesquisar</button>
+            <BotaoPesquisar/>
 
         </form>
 
@@ -65,6 +66,22 @@ export function TabelaFilmes({filmes}){
             </div>
 
         </div>
+
+    )
+
+}
+
+export function BotaoPesquisar(){
+
+    const { pending } = useFormStatus()
+
+    return (
+
+        <button type="submit" disabled={pending}>
+
+            {pending ? "Pesquisando..." : "Pesquisar"}
+
+        </button>
 
     )
 
