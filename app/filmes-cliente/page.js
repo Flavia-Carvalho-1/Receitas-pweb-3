@@ -2,11 +2,23 @@
 
 export default function Home(){
 
+    async function handleAction(formData){
+
+        const titulo = formData.get("titulo")
+
+        const httpRes = await fetch(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${titulo}`)
+
+        const jsonRes = await httpRes.json()
+
+        console.log(jsonRes)
+
+    }
+
     return (
 
         <div>
 
-            <FormularioFilmes/>
+            <FormularioFilmes handleAction={handleAction}/>
 
             <TabelaFilmes filmes={ [] }/>
 
@@ -16,13 +28,7 @@ export default function Home(){
 
 }
 
-export function FormularioFilmes(){
-
-    function handleAction(formData){
-
-        console.log(formData.get("titulo"))
-
-    }
+export function FormularioFilmes({handleAction}){
 
     return (
 
