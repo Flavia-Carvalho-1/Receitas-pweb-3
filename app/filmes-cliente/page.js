@@ -23,13 +23,17 @@ export default function Home(){
 
     return (
 
-        <div>
+        <>
+
+            <div className="subtitulo">Receita 18</div>
+
+            <h1>Filmes (busca no navegador)</h1>
 
             <FormularioFilmes handleAction={handleAction} titulo={titulo} setTitulo={setTitulo}/>
 
             <TabelaFilmes filmes={ resultFilmes }/>
 
-        </div>
+        </>
 
     )
 
@@ -39,7 +43,7 @@ export function FormularioFilmes({handleAction, titulo, setTitulo}){
 
     return (
 
-        <form action={handleAction}>
+        <form action={handleAction} className="form-busca">
 
             <label htmlFor="idTitulo">Título</label>
 
@@ -57,13 +61,25 @@ export function TabelaFilmes({filmes}){
 
     return (
 
-        <div>
+        <div className="lista-filmes">
 
-            <div>
+            {filmes.map( (m) => (
 
-                {filmes.map( (m) => <div key={m.imdbID}>{m.Title} --- {m.Year}</div> )}
+                <div key={m.imdbID} className="filme">
 
-            </div>
+                    {m.Poster !== 'N/A' && <img src={m.Poster} alt={m.Title} width="80" />}
+
+                    <div>
+
+                        <strong>{m.Title}</strong>
+
+                        <div className="subtitulo">{m.Year} · {m.Type}</div>
+
+                    </div>
+
+                </div>
+
+            ))}
 
         </div>
 
