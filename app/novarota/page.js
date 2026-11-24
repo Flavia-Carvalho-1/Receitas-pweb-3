@@ -1,38 +1,30 @@
-import { Menu, Rodape } from "../page";
+import Link from "next/link";
 import { MariaPrea, Mensagem, Cartao } from "./componentes";
 
 export default function NovaRotaHome(){
 
     return (
 
-        <div>
+        <>
 
-            <Menu />
+            <div className="subtitulo">Receita 14</div>
 
-            <main className="cartao">
+            <h1>Nova Rota, Nova Página</h1>
 
-                <div className="subtitulo">Receita 14</div>
+            <MariaPrea />
 
-                <h1>Nova Rota, Nova Página</h1>
+            <Mensagem texto="Morreu Maria Preá, de tanto chorar..." />
+            <Mensagem texto="A mesma função, com outro texto e outra cor." cor="red" />
 
-                <MariaPrea />
+            <Cartao titulo="Aviso" texto="Prova na sexta-feira." cor="red" />
+            <Cartao titulo="Dica" texto="Estude os componentes." cor="green" />
 
-                <Mensagem texto="Morreu Maria Preá, de tanto chorar..." />
-                <Mensagem texto="A mesma função, com outro texto e outra cor." cor="red" />
+            <Link href="/novarota/sobre" className="link-cartao">
+                <strong>Sobre →</strong>
+                <span>Veja a equipe e a página do subdiretório</span>
+            </Link>
 
-                <Cartao titulo="Aviso" texto="Prova na sexta-feira." cor="red" />
-                <Cartao titulo="Dica" texto="Estude os componentes." cor="green" />
-
-                <a href="/novarota/sobre" className="link-cartao">
-                    <strong>Sobre →</strong>
-                    <span>Veja a equipe e a página do subdiretório</span>
-                </a>
-
-            </main>
-
-            <Rodape />
-
-        </div>
+        </>
 
     )
 
