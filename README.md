@@ -13,7 +13,7 @@ num mesmo projeto: um catálogo de filmes chamado Cinelista.
 - [x] 18: Client component e useState
 - [x] 19: API própria (route.js)
 - [x] 20: Server actions
-- [ ] 21: Rotas dinâmicas e geração estática
+- [x] 21: Rotas dinâmicas e geração estática
 - [ ] 22 (opcional): Banco de dados MySQL
 - [ ] 23 (opcional): API do banco e página com SWR
 
