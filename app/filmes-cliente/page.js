@@ -1,8 +1,10 @@
 "use client"
 
+import { useState } from "react"
+
 export default function Home(){
 
-    let resultFilmes = []
+    const [resultFilmes, setResultFilmes] = useState([])
 
     async function handleAction(formData){
 
@@ -12,7 +14,7 @@ export default function Home(){
 
         const jsonRes = await httpRes.json()
 
-        resultFilmes = jsonRes.Search || []
+        setResultFilmes(jsonRes.Search || [])
 
     }
 
