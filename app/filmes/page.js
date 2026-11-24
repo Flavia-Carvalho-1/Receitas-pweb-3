@@ -18,11 +18,17 @@ export default async function Filmes({searchParams}){
 
         <div>
 
-            <div>
+            {data.Search.map( (m) => (
 
-                {data.Search.map( (m) => <div key={m.imdbID}>{m.Title} --- {m.Year}</div> )}
+                <div key={m.imdbID}>
 
-            </div>
+                    <div>{m.Title} --- {m.Year}</div>
+
+                    {m.Poster !== 'N/A' && <img src={m.Poster} alt={m.Title} width="100" />}
+
+                </div>
+
+            ))}
 
         </div>
 
