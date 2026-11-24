@@ -187,3 +187,46 @@ code {
    margin: 2px 0 0 0;
    font-size: .9rem;
 }
+
+
+.form-busca {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   gap: 10px 12px;
+   align-items: center;
+   background: #faf5ea;
+   border: 1px solid #e6dccb;
+   border-radius: 8px;
+   padding: 14px 16px;
+   margin-bottom: 20px;
+}
+
+.form-busca label {
+   font-weight: bold;
+   color: #7a4b12;
+}
+
+.form-busca input,
+.form-busca select {
+   padding: 8px 10px;
+   border: 1px solid #d9ccb4;
+   border-radius: 6px;
+   font-size: 1rem;
+   background: #fff;
+}
+
+.form-busca button {
+   grid-column: 1 / -1;
+   justify-self: start;
+   background: #7a4b12;
+   color: #fff;
+   border: none;
+   padding: 10px 18px;
+   border-radius: 6px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.form-busca button:hover {
+   background: #5c380d;
+}
