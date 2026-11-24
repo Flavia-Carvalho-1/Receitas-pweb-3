@@ -11,7 +11,7 @@ export default function Home(){
 
         const chave = formData.get("titulo")
 
-        const httpRes = await fetch(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${chave}`)
+        const httpRes = await fetch(`/api/filmes?titulo=${encodeURIComponent(chave)}`)
 
         const jsonRes = await httpRes.json()
 
