@@ -46,7 +46,7 @@ export default function Filmes(){
 
         <div>
 
-            { data.Search.map( (m) => <div>{m.Title} --- {m.Year}</div>) }
+            { data.Search.map( (m) => <div key={m.imdbID}>{m.Title} --- {m.Year}</div>) }
 
         </div>
 
