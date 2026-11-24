@@ -8,7 +8,7 @@ num mesmo projeto: um catálogo de filmes chamado Cinelista.
 - [x] 13: Aplicação Next JS do zero (rotas e páginas)
 - [x] 14: Componentes e props
 - [x] 15: Layout e Link
-- [ ] 16: Server component e API externa (OMDb)
+- [x] 16: Server component e API externa (OMDb)
 - [ ] 17: Formulário com Form
 - [ ] 18: Client component e useState
 - [ ] 19: API própria (route.js)
@@ -19,7 +19,8 @@ num mesmo projeto: um catálogo de filmes chamado Cinelista.
 
 ## Como rodar
 
-    npm install
-    npm run dev
+1. npm install
+2. Crie o arquivo .env.local com a sua chave do OMDb (modelo em .env.example)
+3. npm run dev
 
 Abra http://localhost:3000
