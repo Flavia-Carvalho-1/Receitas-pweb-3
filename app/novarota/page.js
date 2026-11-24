@@ -1,13 +1,17 @@
+import { MariaPrea } from "./componentes";
+
 export default function NovaRotaHome(){
 
-   return (
+    return (
 
-      <div>
+       <div>
 
-         <h1>Nova Rota, Nova Página</h1>
+          <h1>Nova Rota, Nova Página</h1>
 
-      </div>
+          <MariaPrea/>
 
-   )
+       </div>
+
+    )
 
 }
