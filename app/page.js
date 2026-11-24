@@ -1,3 +1,4 @@
+import Link from 'next/link'
 export function Menu() {
     return (
         <nav className="menu">
@@ -25,6 +26,8 @@ export default function Home(){
             <main className="cartao">
                 <div className="subtitulo">Menu principal</div>
                 <h1>Viva Santana!</h1>
+                <p><Link href="/novarota">Nova Rota (marca Link)</Link></p>
+                <p><a href="/novarota">Nova Rota, jeito antigo (marca a)</a></p>
             </main>
             <Rodape />
         </div>
