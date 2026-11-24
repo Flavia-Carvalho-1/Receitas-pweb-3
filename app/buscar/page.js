@@ -1,22 +1,18 @@
-import Form from "next/form"
+import { FormularioBusca } from "../filmes/componentes"
 
-export default async function BuscarFilmes(){
+export default function BuscarFilmes(){
 
     return (
 
-        <Form action="/filmes">
+        <>
 
-            <label htmlFor="idTitulo">Título</label>
+            <div className="subtitulo">Receita 17</div>
 
-            <input id="idTitulo" name="titulo"/>
+            <h1>Buscar filmes</h1>
 
-            <label htmlFor="idAno">Ano</label>
+            <FormularioBusca />
 
-            <input id="idAno" name="ano"/>
-
-            <button type="submit">Pesquisar</button>
-
-        </Form>
+        </>
 
     )
 
