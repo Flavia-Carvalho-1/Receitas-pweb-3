@@ -10,6 +10,10 @@ export default async function BuscarFilmes(){
 
             <input id="idTitulo" name="titulo"/>
 
+            <label htmlFor="idAno">Ano</label>
+
+            <input id="idAno" name="ano"/>
+
             <button type="submit">Pesquisar</button>
 
         </Form>
