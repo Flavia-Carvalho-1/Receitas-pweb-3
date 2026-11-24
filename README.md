@@ -7,7 +7,7 @@ num mesmo projeto: um catálogo de filmes chamado Cinelista.
 
 - [x] 13: Aplicação Next JS do zero (rotas e páginas)
 - [x] 14: Componentes e props
-- [ ] 15: Layout e Link
+- [x] 15: Layout e Link
 - [ ] 16: Server component e API externa (OMDb)
 - [ ] 17: Formulário com Form
 - [ ] 18: Client component e useState
