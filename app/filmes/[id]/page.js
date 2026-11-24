@@ -19,3 +19,13 @@ export default async function Filme({ params }) {
     )
 
 }
+
+export async function generateStaticParams() {
+
+    const todos = await fetch(`https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=lady`).then((res) => res.json())
+
+    return todos.Search.map((filme) => ({
+        id: filme.imdbID,
+    }))
+
+}
