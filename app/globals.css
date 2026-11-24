@@ -7,7 +7,7 @@ body {
    padding: 0 16px 40px 16px;
 }
 
-/* Menu de navegação */
+
 .menu {
    display: flex;
    flex-wrap: wrap;
@@ -30,7 +30,7 @@ body {
    background: #5c380d;
 }
 
-/* "Cartão" com o conteúdo de cada página */
+
 .cartao {
    background: #fff;
    border-radius: 8px;
@@ -60,7 +60,7 @@ code {
    padding: 2px 6px;
 }
 
-/* Rodapé */
+
 .rodape {
    text-align: center;
    color: #8a7a64;
@@ -71,4 +71,62 @@ code {
    border: none;
    border-top: 1px solid #d9ccb4;
    margin-bottom: 10px;
+}
+
+
+.botao {
+   display: inline-block;
+   background: #7a4b12;
+   color: #fff;
+   text-decoration: none;
+   padding: 10px 18px;
+   border-radius: 6px;
+   font-weight: bold;
+   box-shadow: 0 2px 6px rgba(0,0,0,.2);
+   transition: background .2s, transform .2s;
+}
+
+.botao:hover {
+   background: #5c380d;
+   transform: translateY(-2px);
+}
+
+.botao.voltar {
+   background: transparent;
+   color: #7a4b12;
+   border: 2px solid #7a4b12;
+   box-shadow: none;
+}
+
+.botao.voltar:hover {
+   background: #7a4b12;
+   color: #fff;
+}
+
+.link-cartao {
+   display: block;
+   text-decoration: none;
+   color: inherit;
+   background: #faf5ea;
+   border: 2px solid #7a4b12;
+   border-radius: 8px;
+   padding: 14px 18px;
+   margin: 16px 0;
+   transition: background .2s, transform .2s;
+}
+
+.link-cartao:hover {
+   background: #f0e4cc;
+   transform: translateY(-2px);
+}
+
+.link-cartao strong {
+   display: block;
+   color: #7a4b12;
+   font-size: 1.1rem;
+}
+
+.link-cartao span {
+   color: #8a7a64;
+   font-size: .9rem;
 }
