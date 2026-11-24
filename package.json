@@ -4,6 +4,7 @@
   "description": "Receitas de 13 a 23 da disciplina de programação web",
   "main": "index.js",
   "scripts": {
+    "dev": "next dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
