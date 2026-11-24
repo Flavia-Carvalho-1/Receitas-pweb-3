@@ -2,6 +2,7 @@
 
 import { useState, useCallback, memo } from "react"
 import { useFormStatus } from "react-dom"
+import Link from "next/link"
 
 export default function Home(){
 
@@ -91,7 +92,7 @@ export function TabelaFilmes({filmes}){
 
                     <div>
 
-                        <strong>{m.Title}</strong>
+                        <Link href={`/filmes/${m.imdbID}`}><strong>{m.Title}</strong></Link>
 
                         <div className="subtitulo">{m.Year} · {m.Type}</div>
 
