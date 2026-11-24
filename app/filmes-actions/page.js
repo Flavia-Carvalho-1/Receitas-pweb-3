@@ -40,6 +40,21 @@ export function FormularioFilmes({actionHandler}){
 
             <input id="idTitulo" name="titulo"/>
 
+            <label htmlFor="idAno">Ano</label>
+
+            <input id="idAno" name="ano"/>
+
+            <label htmlFor="idTipo">Tipo</label>
+
+            <select id="idTipo" name="tipo">
+
+                <option value="">Todos</option>
+                <option value="movie">Filme</option>
+                <option value="series">Série</option>
+                <option value="episode">Episódio</option>
+
+            </select>
+
             <button type="submit">Pesquisar</button>
 
         </form>
