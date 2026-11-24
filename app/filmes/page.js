@@ -14,23 +14,45 @@ export default async function Filmes({searchParams}){
 
     const data = await res.json()
 
+    const filmes = data.Search || []
+
     return (
 
-        <div>
+        <>
 
-            {data.Search.map( (m) => (
+            <div className="subtitulo">Receita 16</div>
 
-                <div key={m.imdbID}>
+            <h1>Filmes</h1>
 
-                    <div>{m.Title} --- {m.Year}</div>
+            <p>
+                Resultados para <strong>{titulo}</strong>
+                {ano && <> em {ano}</>}
+                {tipo && <> ({tipo})</>}
+                : {data.totalResults || 0} no total.
+            </p>
 
-                    {m.Poster !== 'N/A' && <img src={m.Poster} alt={m.Title} width="100" />}
+            {filmes.length === 0 && <p>Nenhum filme encontrado.</p>}
 
-                </div>
+            <div className="lista-filmes">
 
-            ))}
+                {filmes.map( (m) => (
 
-        </div>
+                    <div key={m.imdbID} className="filme">
+
+                        {m.Poster !== 'N/A' && <img src={m.Poster} alt={m.Title} width="80" />}
+
+                        <div>
+                            <strong>{m.Title}</strong>
+                            <div className="subtitulo">{m.Year} · {m.Type}</div>
+                        </div>
+
+                    </div>
+
+                ))}
+
+            </div>
+
+        </>
 
     )
 
