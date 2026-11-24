@@ -18,9 +18,15 @@ export default function Home(){
 
 export function FormularioFilmes(){
 
+    function handleAction(formData){
+
+        console.log(formData.get("titulo"))
+
+    }
+
     return (
 
-        <form>
+        <form action={handleAction}>
 
             <label htmlFor="idTitulo">Título</label>
 
