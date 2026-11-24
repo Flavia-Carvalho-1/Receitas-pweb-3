@@ -1,4 +1,5 @@
 import './globals.css'
+import { Menu, Rodape } from './componentes'
 
 export const metadata = {
   title: 'Cinelista',
@@ -6,10 +7,13 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  console.log("montando layout")
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <Menu />
+        <main className="cartao">{children}</main>
+        <Rodape />
+      </body>
     </html>
   )
 }
