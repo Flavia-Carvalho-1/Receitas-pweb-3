@@ -10,7 +10,7 @@ num mesmo projeto: um catálogo de filmes chamado Cinelista.
 - [x] 15: Layout e Link
 - [x] 16: Server component e API externa (OMDb)
 - [x] 17: Formulário com Form
-- [ ] 18: Client component e useState
+- [x] 18: Client component e useState
 - [ ] 19: API própria (route.js)
 - [ ] 20: Server actions
 - [ ] 21: Rotas dinâmicas e geração estática
