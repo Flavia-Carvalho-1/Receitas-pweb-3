@@ -2,6 +2,8 @@
 
 export default function Home(){
 
+    let resultFilmes = []
+
     async function handleAction(formData){
 
         const titulo = formData.get("titulo")
@@ -10,7 +12,7 @@ export default function Home(){
 
         const jsonRes = await httpRes.json()
 
-        console.log(jsonRes)
+        resultFilmes = jsonRes.Search || []
 
     }
 
@@ -20,7 +22,7 @@ export default function Home(){
 
             <FormularioFilmes handleAction={handleAction}/>
 
-            <TabelaFilmes filmes={ [] }/>
+            <TabelaFilmes filmes={ resultFilmes }/>
 
         </div>
 
