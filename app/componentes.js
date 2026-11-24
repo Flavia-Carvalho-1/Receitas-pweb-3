@@ -5,6 +5,7 @@ export function Menu() {
         <nav className="menu">
             <Link href="/">Início</Link>
             <Link href="/filmes">Filmes</Link>
+            <Link href="/filmes-cliente">Filmes (cliente)</Link>
             <Link href="/rota1">Rota 1</Link>
             <Link href="/rota2">Rota 2</Link>
             <Link href="/novarota">Nova Rota</Link>
