@@ -1,15 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback, memo } from "react"
 import { useFormStatus } from "react-dom"
 
 export default function Home(){
 
     const [resultFilmes, setResultFilmes] = useState([])
 
-    const [titulo, setTitulo] = useState("")
-
-    async function handleAction(formData){
+    const handleAction = useCallback(async (formData) => {
 
         const chave = formData.get("titulo")
 
@@ -19,7 +17,7 @@ export default function Home(){
 
         setResultFilmes(jsonRes.Search || [])
 
-    }
+    }, [])
 
     return (
 
@@ -29,7 +27,7 @@ export default function Home(){
 
             <h1>Filmes (busca no navegador)</h1>
 
-            <FormularioFilmes handleAction={handleAction} titulo={titulo} setTitulo={setTitulo}/>
+            <FormularioFilmes handleAction={handleAction}/>
 
             <TabelaFilmes filmes={ resultFilmes }/>
 
@@ -39,7 +37,11 @@ export default function Home(){
 
 }
 
-export function FormularioFilmes({handleAction, titulo, setTitulo}){
+export const FormularioFilmes = memo(function FormularioFilmes({handleAction}){
+
+    console.log("redesenhando: formulário")
+
+    const [titulo, setTitulo] = useState("")
 
     return (
 
@@ -55,9 +57,27 @@ export function FormularioFilmes({handleAction, titulo, setTitulo}){
 
     )
 
+})
+
+export function BotaoPesquisar(){
+
+    const { pending } = useFormStatus()
+
+    return (
+
+        <button type="submit" disabled={pending}>
+
+            {pending ? "Pesquisando..." : "Pesquisar"}
+
+        </button>
+
+    )
+
 }
 
 export function TabelaFilmes({filmes}){
+
+    console.log("redesenhando: tabela")
 
     return (
 
@@ -82,22 +102,6 @@ export function TabelaFilmes({filmes}){
             ))}
 
         </div>
-
-    )
-
-}
-
-export function BotaoPesquisar(){
-
-    const { pending } = useFormStatus()
-
-    return (
-
-        <button type="submit" disabled={pending}>
-
-            {pending ? "Pesquisando..." : "Pesquisar"}
-
-        </button>
 
     )
 
