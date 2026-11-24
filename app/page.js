@@ -1,23 +1,31 @@
-export default function Home(){
-
+export function Menu() {
     return (
-
-        <div>
-
-            <div>Menu principal</div>
-
-            <div>
-
-                <h1>
-
-                    Viva Santana!
-
-                </h1>
-
-            </div>
-
-        </div>
-
+        <nav className="menu">
+            <a href="/">Início</a>
+            <a href="/rota1">Rota 1</a>
+            <a href="/rota2">Rota 2</a>
+        </nav>
     )
+}
 
+export function Rodape() {
+    return (
+        <footer className="rodape">
+            <hr />
+            <small>Receita 13 - Next JS</small>
+        </footer>
+    )
+}
+
+export default function Home(){
+    return (
+        <div>
+            <Menu />
+            <main className="cartao">
+                <div className="subtitulo">Menu principal</div>
+                <h1>Viva Santana!</h1>
+            </main>
+            <Rodape />
+        </div>
+    )
 }
