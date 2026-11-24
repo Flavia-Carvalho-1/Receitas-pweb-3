@@ -1,3 +1,4 @@
+import Link from "next/link"
 export default async function Filmes({searchParams}){
 
     const {titulo = 'bagdad', ano = '', tipo = ''} = await searchParams
@@ -42,7 +43,7 @@ export default async function Filmes({searchParams}){
                         {m.Poster !== 'N/A' && <img src={m.Poster} alt={m.Title} width="80" />}
 
                         <div>
-                            <strong>{m.Title}</strong>
+                            <Link href={`/filmes/${m.imdbID}`}><strong>{m.Title}</strong></Link>
                             <div className="subtitulo">{m.Year} · {m.Type}</div>
                         </div>
 
