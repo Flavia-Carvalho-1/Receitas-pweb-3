@@ -6,11 +6,13 @@ export default function Home(){
 
     const [resultFilmes, setResultFilmes] = useState([])
 
+    const [titulo, setTitulo] = useState("")
+
     async function handleAction(formData){
 
-        const titulo = formData.get("titulo")
+        const chave = formData.get("titulo")
 
-        const httpRes = await fetch(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${titulo}`)
+        const httpRes = await fetch(`https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}&s=${chave}`)
 
         const jsonRes = await httpRes.json()
 
@@ -22,7 +24,7 @@ export default function Home(){
 
         <div>
 
-            <FormularioFilmes handleAction={handleAction}/>
+            <FormularioFilmes handleAction={handleAction} titulo={titulo} setTitulo={setTitulo}/>
 
             <TabelaFilmes filmes={ resultFilmes }/>
 
@@ -32,7 +34,7 @@ export default function Home(){
 
 }
 
-export function FormularioFilmes({handleAction}){
+export function FormularioFilmes({handleAction, titulo, setTitulo}){
 
     return (
 
@@ -40,7 +42,7 @@ export function FormularioFilmes({handleAction}){
 
             <label htmlFor="idTitulo">Título</label>
 
-            <input id="idTitulo" name="titulo"/>
+            <input id="idTitulo" name="titulo" value={titulo} onChange={(e) => setTitulo(e.target.value)}/>
 
             <button type="submit">Pesquisar</button>
 
