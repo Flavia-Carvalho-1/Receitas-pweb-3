@@ -1,3 +1,5 @@
+export const revalidate = 86400
+
 export default async function Filme({ params }) {
 
     const { id } = await params
