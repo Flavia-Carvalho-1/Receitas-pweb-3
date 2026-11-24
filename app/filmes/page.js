@@ -1,6 +1,8 @@
-export default async function Filmes(){
+export default async function Filmes({searchParams}){
 
-    const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=bagdad`)
+    const {titulo = 'bagdad'} = await searchParams
+
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${titulo}`)
 
     const data = await res.json()
 
