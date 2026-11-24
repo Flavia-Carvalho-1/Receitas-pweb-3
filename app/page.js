@@ -4,6 +4,7 @@ export function Menu() {
             <a href="/">Início</a>
             <a href="/rota1">Rota 1</a>
             <a href="/rota2">Rota 2</a>
+            <a href="/novarota">Nova Rota</a>
         </nav>
     )
 }
