@@ -2,7 +2,7 @@
 
 import { buscarFilmes } from "../actions/filmeActions"
 import { useState } from "react"
-import { TabelaFilmes } from "../filmes-cliente/page"
+import { TabelaFilmes, BotaoPesquisar } from "../filmes-cliente/page"
 
 export default function Home(){
 
@@ -18,13 +18,21 @@ export default function Home(){
 
     return (
 
-        <div>
+        <>
+
+            <div className="subtitulo">Receita 20</div>
+
+            <h1>Filmes (server action)</h1>
 
             <FormularioFilmes actionHandler={handleAction}/>
 
+            {data.error && <p>{data.error}</p>}
+
+            {data.Error && <p>Nenhum filme encontrado (a API respondeu: {data.Error}).</p>}
+
             {data.Search && <TabelaFilmes filmes={data.Search}/>}
 
-        </div>
+        </>
 
     )
 
@@ -34,15 +42,15 @@ export function FormularioFilmes({actionHandler}){
 
     return (
 
-        <form action={actionHandler}>
+        <form action={actionHandler} className="form-busca">
 
             <label htmlFor="idTitulo">Título</label>
 
-            <input id="idTitulo" name="titulo"/>
+            <input id="idTitulo" name="titulo" required/>
 
             <label htmlFor="idAno">Ano</label>
 
-            <input id="idAno" name="ano"/>
+            <input id="idAno" name="ano" placeholder="ex.: 1987"/>
 
             <label htmlFor="idTipo">Tipo</label>
 
@@ -55,7 +63,7 @@ export function FormularioFilmes({actionHandler}){
 
             </select>
 
-            <button type="submit">Pesquisar</button>
+            <BotaoPesquisar/>
 
         </form>
 
