@@ -235,3 +235,22 @@ code {
    background: #8a7a64;
    cursor: wait;
 }
+
+.detalhe-filme {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   margin: 16px 0;
+}
+
+.detalhe-filme img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 8px;
+   box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+.detalhe-filme > div {
+   flex: 1;
+   min-width: 220px;
+}
